@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import todoApp from './reducers/reducer';
 import App from './components/app.jsx';
+import '../style/todoItems.scss';
 
 main();
 

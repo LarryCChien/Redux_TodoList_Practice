@@ -1,0 +1,56 @@
+$border__color: #3c3c3c;
+$border__radius: 5px;
+$font-size: 18px;
+$format__space: 10px;
+$format__space--half: $format__space / 2;
+$format__space--two-times: $format__space * 2;
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: $font-size;
+}
+body {
+    padding: 100px;
+}
+.appContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+
+    & > *:not(:last-child) {
+        margin-bottom: $format__space--two-times;
+    }
+}
+.addTodo__form {
+    & > * {
+        font-size: $font-size;
+        line-height: $format__space--two-times;
+        padding: $format__space--half;
+
+        &:not(:last-child) {
+            margin-right: $format__space;
+        }
+    }
+    input {
+        border: solid 1px $border__color;
+        border-radius: $border__radius;
+    }
+    button {
+        border: solid 1px $border__color;
+        border-radius: $border__radius;
+        cursor: pointer;
+    }
+}
+
+.todoList__ul {
+    list-style-type: none;
+    
+    .todoList__li {
+        margin-bottom: $format__space--half;
+    }
+}

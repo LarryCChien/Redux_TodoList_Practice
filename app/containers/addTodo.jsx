@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/actions';
 
@@ -7,7 +7,7 @@ let AddTodo = ({ dispatch }) => {
 
     return (
         <div>
-            <form onSubmit={e => {
+            <form className='addTodo__form' onSubmit={e => {
                 e.preventDefault()
                 if (!input.value.trim()) {
                     return

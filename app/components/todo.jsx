@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Todo = ({ onClick, checked, text }) => (
-    <li onClick={onClick}
+    <li onClick={onClick} className='todoList__li'
         style={{ textDecoration: checked ? 'line-through' : 'none' }}>
         {text}
     </li>
