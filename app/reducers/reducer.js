@@ -10,9 +10,11 @@ const { SHOW_ALL } = VisibilityFilters;
 const initailTodos = [{
     text: '這個預設已完成',
     checked: true,
+    id: 0
 }, {
     text: '這個預設還沒完成',
     checked: false,
+    id: 1
 }];
 
 const todos = (state = initailTodos, action) => {
@@ -22,12 +24,13 @@ const todos = (state = initailTodos, action) => {
                 ...state,
                 {
                     text: action.text,
-                    checked: false
+                    checked: false,
+                    id: action.id
                 }
             ];
         case TOGGLE_TODO:
-            return state.map((todo, index) => {
-                if (index === action.index) {
+            return state.map((todo) => {
+                if (todo.id === action.index) {
                     return Object.assign({}, todo, {
                         checked: !todo.checked
                     })
