@@ -48,9 +48,14 @@ body {
 }
 
 .todoList__ul {
-    list-style-type: none;
-    
+    list-style-type: decimal;
+
     .todoList__li {
-        margin-bottom: $format__space--half;
+        cursor: pointer;
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: $format__space--half;
+        }
     }
 }
