@@ -1,4 +1,4 @@
-export default defaultState = {
+const defaultState = {
     visibilityFilter: 'SHOW_ALL',
     todos: [{
         text: '這個預設有打勾',
@@ -8,3 +8,5 @@ export default defaultState = {
         checked: false,
     }]
 };
+
+export default defaultState;

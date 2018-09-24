@@ -1,4 +1,4 @@
-import { createStore } from '../../node_modules/redux';
+import { createStore } from 'redux';
 import { todoApp } from '../reducers/reducer';
 import { defaultState } from '../reducers/state';
 

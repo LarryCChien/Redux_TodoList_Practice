@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterLink from '../containers/FilterLink';
+import FilterLink from '../containers/filterLink';
 
 const Footer = () => (
     <p>
@@ -12,8 +12,8 @@ const Footer = () => (
             Active
         </FilterLink>
         {", "}
-        <FilterLink filter="SHOW_COMPLETED">
-            Completed
+        <FilterLink filter="SHOW_CHECKED">
+            Checked
         </FilterLink>
     </p>
 );
