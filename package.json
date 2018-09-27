@@ -13,8 +13,10 @@
     "url": "git+https://github.com/LarryCChien/Redux_TodoList_Practice.git"
   },
   "keywords": [
-    "react",
-    "reactjs"
+    "React",
+    "Redux",
+    "Reactjs",
+    "JavaScript"
   ],
   "author": "Larry.C.Chien",
   "license": "ISC",
