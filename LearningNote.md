@@ -6,12 +6,14 @@
 ### 20180924  
 在const的用法中，如果是物件或陣列，在宣告後修改其值是不會有錯的。可參考[此連結](https://pjchender.blogspot.com/2017/01/const.html)  
 EX:  
+```javascript
 const a = { cat: 'white' };  
 const b = { dog: 'yellow' };  
 a.cat = 'black'; // a還是指向原本的記憶體位置，所以不會有錯誤。  
 console.log(a); // 會是{ cat: 'black' }  
 b = { dog: 'pink' }; // 這樣是將b重新指向新的記憶體位置，所以會有錯誤。  
 console.log(b); // 會是Uncaught SyntaxError: Identifier 'b' has already been declared  
+```
 
 ---  
 
@@ -31,24 +33,26 @@ import React, { PropTypes } from 'react';
 import React from 'react';  
 import PropTypes from 'prop-types';  
 
-### 20180928
-導入ESLint並遵從AirBnB的規則，但 `空格` 則另行定應為： `空4格` 而非規則中的空2格。
-ESLint安裝在Global環境，並透過VS Code的擴充功能引用，而非各個Project的Webpack運行。
-如果要在Project的Webpack使用的話如下：
-const CliEngine = require('eslint').CLIEngine;
-const eslintOptions = new CliEngine({
-    fixed: true,
-    emitError: true,
-    eslintPath: path.resolve(__dirname, '.eslintrc.json'),
-    eslint: {
-        configFile: path.resolve(__dirname, '.eslintrc.json'),
-    },
-});
-config.module.rules = [{
-    enforce: 'pre',
-    test: /\.jsx$/,
-    exclude: /node_modules/,
-    include: path.resolve(__dirname, 'app'),
-    loader: 'eslint-loader',
-    options: eslintOptions,
-}];
+### 20180928  
+導入ESLint並遵從AirBnB的規則，但 `空格` 則另行定應為： `空4格` 而非規則中的空2格。  
+ESLint安裝在Global環境，並透過VS Code的擴充功能引用，而非各個Project的Webpack運行。  
+如果要在Project的Webpack使用的話如下：  
+```javascript
+const CliEngine = require('eslint').CLIEngine;  
+const eslintOptions = new CliEngine({  
+    fixed: true,  
+    emitError: true,  
+    eslintPath: path.resolve(__dirname, '.eslintrc.json'),  
+    eslint: {  
+        configFile: path.resolve(__dirname, '.eslintrc.json'),  
+    },  
+});  
+config.module.rules = [{  
+    enforce: 'pre',  
+    test: /\.jsx$/,  
+    exclude: /node_modules/,  
+    include: path.resolve(__dirname, 'app'),  
+    loader: 'eslint-loader',  
+    options: eslintOptions,  
+}];  
+```
