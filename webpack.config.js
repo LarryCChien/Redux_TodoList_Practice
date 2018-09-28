@@ -51,7 +51,7 @@ const config = {
     plugins,
     devServer: {
         hot: true,
-        contentBase: path.join(__dirname, ''),
+        contentBase: path.resolve(__dirname, ''),
         publicPath: '/build',
         stats: { colors: true },
     },

@@ -33,3 +33,22 @@ import PropTypes from 'prop-types';
 
 ### 20180928
 導入ESLint並遵從AirBnB的規則，但 `空格` 則另行定應為： `空4格` 而非規則中的空2格。
+ESLint安裝在Global環境，並透過VS Code的擴充功能引用，而非各個Project的Webpack運行。
+如果要在Project的Webpack使用的話如下：
+const CliEngine = require('eslint').CLIEngine;
+const eslintOptions = new CliEngine({
+    fixed: true,
+    emitError: true,
+    eslintPath: path.resolve(__dirname, '.eslintrc.json'),
+    eslint: {
+        configFile: path.resolve(__dirname, '.eslintrc.json'),
+    },
+});
+config.module.rules = [{
+    enforce: 'pre',
+    test: /\.jsx$/,
+    exclude: /node_modules/,
+    include: path.resolve(__dirname, 'app'),
+    loader: 'eslint-loader',
+    options: eslintOptions,
+}];
