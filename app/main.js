@@ -4,15 +4,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import todoApp from './reducers/reducer';
-import App from './components/app.jsx';
+import App from './components/app';
 import '../style/todoItems.scss';
 
-main();
-
 function main() {
-    let store = createStore(todoApp);
-	ReactDOM.render(
-        <Provider store={store}>
-		    <App />
-        </Provider>, document.getElementById('content'));
+    const store = createStore(todoApp);
+    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('content'));
 }
+main();

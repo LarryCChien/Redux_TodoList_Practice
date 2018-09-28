@@ -1,5 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from '../actions/actionTypes';
 import { combineReducers } from 'redux';
+import {
+    ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters,
+} from '../actions/actionTypes';
+
 const { SHOW_ALL } = VisibilityFilters;
 
 // 在精簡後便不用特地另外宣告預設值
@@ -10,45 +13,45 @@ const { SHOW_ALL } = VisibilityFilters;
 const initailTodos = [{
     text: '這個預設已完成',
     checked: true,
-    id: 0
+    id: 0,
 }, {
     text: '這個預設還沒完成',
     checked: false,
-    id: 1
+    id: 1,
 }];
 
 const todos = (state = initailTodos, action) => {
     switch (action.type) {
-        case ADD_TODO:
-            return [
-                ...state,
-                {
-                    text: action.text,
-                    checked: false,
-                    id: action.id
-                }
-            ];
-        case TOGGLE_TODO:
-            return state.map((todo) => {
-                if (todo.id === action.index) {
-                    return Object.assign({}, todo, {
-                        checked: !todo.checked
-                    })
-                }
-                return todo;
-            });
-        default:
-            return state;
+    case ADD_TODO:
+        return [
+            ...state,
+            {
+                text: action.text,
+                checked: false,
+                id: action.id,
+            },
+        ];
+    case TOGGLE_TODO:
+        return state.map((todo) => {
+            if (todo.id === action.index) {
+                return Object.assign({}, todo, {
+                    checked: !todo.checked,
+                });
+            }
+            return todo;
+        });
+    default:
+        return state;
     }
 };
 const visibilityFilter = (state = SHOW_ALL, action) => {
     switch (action.type) {
-        case SET_VISIBILITY_FILTER:
-            return action.filter;
-        default:
-            return state;
+    case SET_VISIBILITY_FILTER:
+        return action.filter;
+    default:
+        return state;
     }
-}
+};
 // const todoApp = (state = initailState, action) => {
 //     switch (action.type) {
 //         case SET_VISIBILITY_FILTER:
@@ -82,7 +85,7 @@ const visibilityFilter = (state = SHOW_ALL, action) => {
 // 同時因為 Redux 有提供 utility 叫 combineReducers()，因此又可以改寫成：
 const todoApp = combineReducers({
     visibilityFilter,
-    todos
+    todos,
 });
 export default todoApp;
 // combineReducers的用法參考如下：

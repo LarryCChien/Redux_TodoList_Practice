@@ -30,3 +30,6 @@ import React, { PropTypes } from 'react';
 且link.jsx的import改為：  
 import React from 'react';  
 import PropTypes from 'prop-types';  
+
+### 20180928
+導入ESLint並遵從AirBnB的規則，但 `空格` 則另行定應為： `空4格` 而非規則中的空2格。

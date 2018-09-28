@@ -1,4 +1,5 @@
 $border__color: #3c3c3c;
+$border__color--empty: #ffffff00;
 $border__radius: 5px;
 $font-size: 18px;
 $format__space: 10px;
@@ -51,8 +52,13 @@ body {
     list-style-type: decimal;
 
     .todoList__li {
-        cursor: pointer;
         width: 100%;
+
+        &--btn {
+            border-color: $border__color--empty;
+            cursor: pointer;
+            font-size: inherit;
+        }
 
         &:not(:last-child) {
             margin-bottom: $format__space--half;
